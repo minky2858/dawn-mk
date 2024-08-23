@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    dawn1:
+        image: ghcr.io/minky2858/dawn-mk:latest
+        container_name: dawn1
+        environment:
+            DAWN_USERNAME: "username"
+            DAWN_PASSWORD: "password"
+            DAWN_PROXY: "<host>:<port>:<user>:<pass>"
+        restart: always

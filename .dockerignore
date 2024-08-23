@@ -1,0 +1,9 @@
+*.log
+__pycache__/
+.vscode/
+sc/
+test.py
+chrome_full.py
+notes.md
+background.js
+docker-compose2.yml
