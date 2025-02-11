@@ -3,7 +3,6 @@ import time
 from pathlib import Path
 from loguru import logger
 from dawn import DawnSession
-from test import ANTICAPTCHA_KEY
 
 
 DAWN_VERSION = "v1.1.3"

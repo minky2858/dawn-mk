@@ -177,3 +177,4 @@ pyrightconfig.json
 
 .vscode
 test.py
+docker-compose-local.yml
