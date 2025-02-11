@@ -8,4 +8,5 @@ services:
             DAWN_USERNAME: "username"
             DAWN_PASSWORD: "password"
             DAWN_PROXY: "<host>:<port>:<user>:<pass>"
+            ANTICAPTCHA_KEY: "anticaptcha_key"
         restart: always

@@ -17,6 +17,7 @@ class ChromeSession(Chrome):
         self.options.add_argument(f"--user-agent={Faker().chrome()}")
         self._set_extension(extension=extension)
         self.options.add_argument("--disable-dev-shm-usage")
+        self.options.add_argument("--disable-web-security")
 
         super().__init__(options=self.options, *args, **kwargs)
 

@@ -3,11 +3,13 @@ import time
 from pathlib import Path
 from loguru import logger
 from dawn import DawnSession
+from test import ANTICAPTCHA_KEY
 
 
-DAWN_VERSION = "v1.0.7"
+DAWN_VERSION = "v1.1.3"
 DAWN_USERNAME = os.environ["DAWN_USERNAME"]
 DAWN_PASSWORD = os.environ["DAWN_PASSWORD"]
+ANTICAPTCHA_KEY = os.environ["ANTICAPTCHA_KEY"]
 DAWN_PROXY = os.environ.get("DAWN_PROXY")
 
 BACKGROUND_JS = """
@@ -59,6 +61,7 @@ if __name__ == "__main__":
             headless=True,
             username=DAWN_USERNAME,
             password=DAWN_PASSWORD,
+            anticaptcha_key=ANTICAPTCHA_KEY,
             version_main=126,
             extension=extensions,
         )

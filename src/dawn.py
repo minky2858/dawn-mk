@@ -1,13 +1,14 @@
 import time
 from loguru import logger
 from chrome import ChromeSession
-from utils import solve_equation
+from utils import solve_equation, solve_image_captcha
 from tenacity import retry, stop_after_attempt, wait_fixed
 
 
-EXTENSION_ID = "fpdkjdnhkakefebpekbdhillbhonfjjp"
+EXTENSION_ID = "epdebjapkleigmgbdjcnoegpebmflfnk"
+# EXTENSION_ID = "abljjofoifohpcmnblbchfadkobjdkji"
 SIGNUP_URL = f"chrome-extension://{EXTENSION_ID}/signup.html"
-SIGNIN_URL = f"chrome-extension://{EXTENSION_ID}/signin.html"
+SIGNIN_URL = f"chrome-extension://{EXTENSION_ID}/pages/signin.html"
 ONBOARDING_URL = f"chrome-extension://{EXTENSION_ID}/onboarding.html"
 DASHBOARD_URL = f"chrome-extension://{EXTENSION_ID}/dashboard.html"
 
@@ -18,15 +19,23 @@ class DawnSession(ChromeSession):
     last_earning = None
 
     def __init__(
-        self, username, password, headless=False, extension=[], *args, **kwargs
+        self,
+        username,
+        password,
+        anticaptcha_key,
+        headless=False,
+        extension=[],
+        *args,
+        **kwargs,
     ):
         super().__init__(headless=headless, extension=extension, *args, **kwargs)
         self.username = username
         self.password = password
+        self.anticaptcha_key = anticaptcha_key
 
-        self.get("http://ipinfo.io/json")
-        ip = self.current_ip()
-        logger.info(f"Current IP: {ip}")
+        # self.get("http://ipinfo.io/json")
+        # ip = self.current_ip()
+        # logger.info(f"Current IP: {ip}")
 
     @retry(stop=stop_after_attempt(5), wait=wait_fixed(5))
     def login(self):
@@ -47,7 +56,10 @@ class DawnSession(ChromeSession):
         eqn_img = self.xpath_wait_clickable("//img[@id='puzzleImage']")
         image_string = eqn_img.get_attribute("src")
         logger.debug(f"Got puzzle as {image_string}, start to solve...")
-        solution = solve_equation(image_string=image_string)
+        # solution = solve_equation(image_string=image_string)
+        solution = solve_image_captcha(
+            image_string=image_string, anticaptcha_key=self.anticaptcha_key
+        )
 
         logger.debug(f"Entering puzzle solution: {solution}")
         puzzle_input = self.xpath_wait_clickable("//input[@id='puzzelAns']")
