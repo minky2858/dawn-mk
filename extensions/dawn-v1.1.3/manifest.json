@@ -1,28 +1,26 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
+    "update_url": "https://clients2.google.com/service/update2/crx",
     "name": "DAWN Validator Chrome Extension",
     "version": "1.1.3",
     "description": "DAWN Validator Chrome Extension",
     "manifest_version": 3,
     "author": "Andrena",
-    "action":{
+    "action": {
         "default_popup": "pages/splash.html",
         "default_title": "DAWN Validator Chrome Extension"
     },
     "background": {
-      "service_worker": "background.js"
+        "service_worker": "background.js"
     },
-"icons": {
-    "16": "assets/image/dawn-extension-logo-16.png",
-    "32": "assets/image/dawn-extension-logo-32.png",
-    "48": "assets/image/dawn-extension-logo-48.png",
-    "128": "assets/image/dawn-extension-logo-128.png"
-  },
-  "permissions": [
-    "storage",
-    "alarms"
-  ]
-
-  
+    "icons": {
+        "16": "assets/image/dawn-extension-logo-16.png",
+        "32": "assets/image/dawn-extension-logo-32.png",
+        "48": "assets/image/dawn-extension-logo-48.png",
+        "128": "assets/image/dawn-extension-logo-128.png"
+    },
+    "key": "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDE3RukzQngQRAVd75PKObHpanA0rqLmuf3CUpmEmE+Q9iur0YA0mjJD9x26G/ROojd7LYakcCiNMvKLGmusIX8gnu1fsWkNvf1HG+QjSKPcshy8dfrksA6DYhlAK+G4X2gF/5AdTMTtj+H46WCFS8SDbRqwHzT2A7t4Vg1mbAeAQonLUQruW9CX7N3pTleDaE9RcXiMuBGMD4trL052GARiP0HcCoq5hXkUK4Nyj8qm7jk5ln2+2ycU+Iu3f90EqQZp4DpQ86UBoYJDDRglBvFBuERSVkQRoPumnyIgtHQLdvl/EG6Gci3kJnSf0CRX5AdFBxL7BQZ67MRcBcKSiN3AgMBAAECggEAOgXBRA16v7Htf6ZPXR19B5L4OXDisorxm4oNd5ArQSLWFoZqZ4ucfsZCAHn5mv1Zoa9G7QXQdP6Cog/9BhPZKdd7hr7amc/pvUCoUT6H1SfLlLVbIn+aUIH0lXBiS6riT/FCatUgPMsWZoLeIT0FJpkLd/tLz1R68fnc+c9WbUD00veJ8Y737W1DDzRYmGddYLfvWkuK0lzwWYKqqhKt9JM6ABdGtKFqVt5nVTWuQu5yCqBL9YLWy+srSCkDYsG80Ysq8HG42Q+N131SaU6Tez+7zI9qN6/ioFVG20JXUJ56QvlWSEDa03pK7ctRl5sXJa/35Yh+GHCCYa24TD5WoQKBgQDlp+wmBd+suFxSzyFObpnb26s63MBxPQO6FNaMGpgbOi554uVnK7uqgPKgUFZuHWLfFyfBUuYtFdBWI6rk2krB3bgOp76ofaAlQjvsVNLZ9mzA3qzlTcesFk9IM3D5HRiUJ2NUQ8MHe0GcRaskgUgAQP8QDl6sY7gLrLol24K3+wKBgQDbcjVWOJrrdb8XH3wFfCY+CbDOvg2Wju3RkdNTrUFUK//ujmRlbhFAfzB8fUsOfFP7B1a1nXjombtGPAVOgOcdMbQ5blxCM1b3PYVZSxeoaoYZdg3dAKbj7dF/SSA7Xt/pM/k8Uxi95C+guR4fvCnQoZ7cWYnAjJriysJtUDH9tQKBgFGxn2aTNlMJrgXjGrT80QyNouaoemiNzNKX8Q4bs7oTw06mcPZ3byWjAywWB/jZyT8UzJaPt8OX++l4fKU2Jdu61GuaLk9fiOVYH1rdfbf9Wght7dEQDxRfR0qmyexD9mdVb5cdF7aEmP1PJycwOf2lIVaD1he6zVCR3BH1eRWbAoGAbdQbHav23SFxIgF/8L7R5Pq0osQ7yL6ACAMT4S01JQtga+SYGqubtsvxWFzc08MlxN1HaF4HxWIreFtRzJh3EwVtTdEOG5PWUqdXtfj/PisSMmwDRDivTiQYVbwjhZNWPUDl3Gs6Vs99htMfYIKr6t74ww+NAfFdE2SnKk6YtoECgYEAmDnRQBiKPIblUG9iFGWV3HBHERQyiS4cig94e+LrfhnN1AC8s+jR0yyz4mNkHyWtV/SKEGrcyTPK6jN4Ko9hFh7pwMFzjkpsyuenNANTonI6thLq+hzWWylFdY4lAWkMTvwy/IC4CG2aGwJH42sbFKTLU81LR+fnUr1xzJUdxqI=",
+    "permissions": [
+        "storage",
+        "alarms"
+    ]
 }

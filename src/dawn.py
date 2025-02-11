@@ -5,8 +5,7 @@ from utils import solve_equation, solve_image_captcha
 from tenacity import retry, stop_after_attempt, wait_fixed
 
 
-EXTENSION_ID = "epdebjapkleigmgbdjcnoegpebmflfnk"
-# EXTENSION_ID = "abljjofoifohpcmnblbchfadkobjdkji"
+EXTENSION_ID = "pkfjhaadnokcgeieffgfbdeflonlhfee"
 SIGNUP_URL = f"chrome-extension://{EXTENSION_ID}/signup.html"
 SIGNIN_URL = f"chrome-extension://{EXTENSION_ID}/pages/signin.html"
 ONBOARDING_URL = f"chrome-extension://{EXTENSION_ID}/onboarding.html"
@@ -39,7 +38,7 @@ class DawnSession(ChromeSession):
 
     @retry(stop=stop_after_attempt(5), wait=wait_fixed(5))
     def login(self):
-        logger.debug("Going to signin page")
+        logger.debug(f"Going to signin page: {SIGNIN_URL}")
         self.get(SIGNIN_URL)
 
         logger.debug(f"Entering email/username: {self.username}")
